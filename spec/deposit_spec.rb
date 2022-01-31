@@ -1,7 +1,6 @@
 require 'deposit'
 
 describe Deposit do
-  let(:amount_to_deposit) {10}
 
   it 'has a value to deposit' do
     expect(Deposit.new(10).amount_to_deposit).to eq(10)
