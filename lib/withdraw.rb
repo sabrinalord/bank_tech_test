@@ -3,7 +3,7 @@ class Withdraw
 
   def initialize(amount_to_withdraw)
     @amount_to_withdraw = amount_to_withdraw
-    @transaction_date = Date.today
+    @transaction_date = Time.now.strftime("%d/%m/%Y")
     @balance_after_transaction = 0
   end 
 

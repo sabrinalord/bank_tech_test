@@ -7,8 +7,9 @@ describe Deposit do
   end 
 
   it 'is instantiated with a transaction date' do
-    allow(Date).to receive(:today).and_return Date.new(2023,01,14)
-    expect(Deposit.new(10).transaction_date).to eq(Date.today)
+    allow(Time).to receive_message_chain(:now, :strftime).and_return "2023,01,14"
+
+    expect(Deposit.new(10).transaction_date).to eq(Time.now.strftime("%d/%m/%Y"))
   end 
 
   describe '#execute' do

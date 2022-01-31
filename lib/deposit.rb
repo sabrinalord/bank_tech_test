@@ -3,7 +3,7 @@ class Deposit
 
   def initialize(amount_to_deposit)
     @amount_to_deposit = amount_to_deposit
-    @transaction_date = Date.today
+    @transaction_date = Time.now.strftime("%d/%m/%Y")
     @balance_after_transaction = 0
 
   end 

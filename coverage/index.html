@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-01-31T20:17:38+00:00">2022-01-31T20:17:38+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-01-31T20:35:35+00:00">2022-01-31T20:35:35+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -128,7 +128,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#69510d2c6a3df6adff639225da3040533d0d7486" class="src_link" title="spec/deposit_spec.rb">spec/deposit_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">22</td>
+            <td class="cell--number">23</td>
             <td class="cell--number">12</td>
             <td class="cell--number">12</td>
             <td class="cell--number">0</td>
@@ -150,7 +150,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#a19273151cdd24ce835e7bd688050a4515432719" class="src_link" title="spec/withdraw_spec.rb">spec/withdraw_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">21</td>
+            <td class="cell--number">23</td>
             <td class="cell--number">12</td>
             <td class="cell--number">12</td>
             <td class="cell--number">0</td>
@@ -470,7 +470,7 @@
 
             
 
-            <code class="ruby">    @transaction_date = Date.today</code>
+            <code class="ruby">    @transaction_date = Time.now.strftime(&quot;%d/%m/%Y&quot;)</code>
           </li>
         </div>
       
@@ -851,7 +851,7 @@
 
             
 
-            <code class="ruby">    @transaction_date = Date.today</code>
+            <code class="ruby">    @transaction_date = Time.now.strftime(&quot;%d/%m/%Y&quot;)</code>
           </li>
         </div>
       
@@ -1485,34 +1485,12 @@
 
             
 
-            <code class="ruby">    allow(Date).to receive(:today).and_return Date.new(2023,01,14)</code>
+            <code class="ruby">    allow(Time).to receive_message_chain(:now, :strftime).and_return &quot;2023,01,14&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(Deposit.new(10).transaction_date).to eq(Date.today)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby">  end </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
@@ -1523,13 +1501,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
+          <li class="covered" data-hits="1" data-linenumber="12">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  describe &#39;#execute&#39; do</code>
+            <code class="ruby">    expect(Deposit.new(10).transaction_date).to eq(Time.now.strftime(&quot;%d/%m/%Y&quot;))</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">  end </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1540,7 +1540,7 @@
 
             
 
-            <code class="ruby">    it &#39;returns the new account balance&#39; do</code>
+            <code class="ruby">  describe &#39;#execute&#39; do</code>
           </li>
         </div>
       
@@ -1551,7 +1551,7 @@
 
             
 
-            <code class="ruby">      account = instance_double(&quot;Account&quot;, :balance =&gt; 5)</code>
+            <code class="ruby">    it &#39;returns the new account balance&#39; do</code>
           </li>
         </div>
       
@@ -1562,7 +1562,7 @@
 
             
 
-            <code class="ruby">      deposit = Deposit.new(10)</code>
+            <code class="ruby">      account = instance_double(&quot;Account&quot;, :balance =&gt; 5)</code>
           </li>
         </div>
       
@@ -1573,18 +1573,18 @@
 
             
 
-            <code class="ruby">      expect(deposit.execute(account.balance)).to eq 15</code>
+            <code class="ruby">      deposit = Deposit.new(10)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="19">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="19">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      </code>
+            
+
+            <code class="ruby">      expect(deposit.execute(account.balance)).to eq 15</code>
           </li>
         </div>
       
@@ -1595,7 +1595,7 @@
 
             
 
-            <code class="ruby">    end </code>
+            <code class="ruby">      </code>
           </li>
         </div>
       
@@ -1606,12 +1606,23 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    end </code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
             
             
 
@@ -2047,51 +2058,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="8">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  it &#39;is instantiated with a transaction date&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    allow(Date).to receive(:today).and_return Date.new(2023,01,14)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(Withdraw.new(10).transaction_date).to eq(Date.today)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="11">
-            
-            
-
-            
-
-            <code class="ruby">  end </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="8">
             
             
 
@@ -2102,24 +2069,68 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="13">
+          <li class="covered" data-hits="1" data-linenumber="9">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  describe &#39;#execute&#39; do</code>
+            <code class="ruby">  it &#39;is instantiated with a transaction date&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">    </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="11">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    it &#39;returns the new account balance&#39; do</code>
+            <code class="ruby">    allow(Time).to receive_message_chain(:now, :strftime).and_return &quot;2023,01,14&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(Withdraw.new(10).transaction_date).to eq(Time.now.strftime(&quot;%d/%m/%Y&quot;))</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">  end </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2130,7 +2141,7 @@
 
             
 
-            <code class="ruby">      account = instance_double(&quot;Account&quot;, :balance =&gt; 10)</code>
+            <code class="ruby">  describe &#39;#execute&#39; do</code>
           </li>
         </div>
       
@@ -2141,7 +2152,7 @@
 
             
 
-            <code class="ruby">      withdraw = Withdraw.new(10)</code>
+            <code class="ruby">    it &#39;returns the new account balance&#39; do</code>
           </li>
         </div>
       
@@ -2152,29 +2163,29 @@
 
             
 
+            <code class="ruby">      account = instance_double(&quot;Account&quot;, :balance =&gt; 10)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="18">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      withdraw = Withdraw.new(10)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="19">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">      expect(withdraw.execute(account.balance)).to eq 0</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="18">
-            
-            
-
-            
-
-            <code class="ruby">      </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="19">
-            
-            
-
-            
-
-            <code class="ruby">    end </code>
           </li>
         </div>
       
@@ -2185,12 +2196,34 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      </code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby">    end </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
             
             
 
