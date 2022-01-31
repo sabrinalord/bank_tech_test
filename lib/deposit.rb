@@ -4,10 +4,12 @@ class Deposit
   def initialize(amount_to_deposit)
     @amount_to_deposit = amount_to_deposit
     @transaction_date = Date.today
+    @balance_after_transaction = ""
+
   end 
 
   def execute(account_balance)
-    account_balance + amount_to_deposit
+    @balance_after_transaction = account_balance + amount_to_deposit
   end
 
 end 
