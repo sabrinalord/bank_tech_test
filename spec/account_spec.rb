@@ -7,7 +7,7 @@ describe Account do
       expect(subject.balance).to eq(0)
     end
 
-    it 'begins with an empty transaction history' do
+    it 'has an empty transaction history' do
       expect(subject.transaction_history).to eq([])
     end     
   end
