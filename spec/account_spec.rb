@@ -14,15 +14,20 @@ describe Account do
   end
   
   describe '#execute_command' do
+    context 'when a deposit is made' do
+       amount_to_deposit = 10
 
-    context 'when a £10 deposit is made to an empty account' do
-      it 'returns the updated account balance as 10' do
-        amount_to_deposit = 10
-        deposit = object_double(Deposit.new(amount_to_deposit), :execute => (subject.balance + amount_to_deposit ))
+      it 'updates the transaction history and returns the new balance' do
+        deposit = object_double(
+                  Deposit.new(amount_to_deposit), 
+                  :execute => (subject.balance + amount_to_deposit)
+                  )
         subject.execute_command(deposit)
 
+        expect(subject.transaction_history.length).to eq(1)
         expect(subject.balance).to eq(10)
       end 
+
     end 
   end 
 

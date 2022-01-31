@@ -1,8 +1,9 @@
 class Deposit
-  attr_reader :amount_to_deposit
+  attr_reader :amount_to_deposit, :transaction_date
 
   def initialize(amount_to_deposit)
     @amount_to_deposit = amount_to_deposit
+    @transaction_date = Date.today
 
   end 
 
