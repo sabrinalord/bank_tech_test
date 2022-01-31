@@ -8,6 +8,7 @@ class Account
   
   def execute_command(command)
       @transaction_history << command
+      @balance = command.execute(@balance)
   end
 
 end 

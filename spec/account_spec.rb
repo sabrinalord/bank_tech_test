@@ -1,4 +1,5 @@
 require 'account'
+require 'deposit'
 
 describe Account do
 
@@ -14,10 +15,15 @@ describe Account do
   
   describe '#execute_command' do
 
-    it 'takes a command as an argument' do
-      deposit = instance_double("Deposit", :amount_to_deposit => 10)
-      expect { subject.execute_command(deposit)}.to_not raise_error
-    end
+    context 'when a £10 deposit is made to an empty account' do
+      it 'returns the updated account balance as 10' do
+        amount_to_deposit = 10
+        deposit = object_double(Deposit.new(amount_to_deposit), :execute => (subject.balance + amount_to_deposit ))
+        subject.execute_command(deposit)
+
+        expect(subject.balance).to eq(10)
+      end 
+    end 
   end 
 
 end
