@@ -4,10 +4,11 @@ class Withdraw
   def initialize(amount_to_withdraw)
     @amount_to_withdraw = amount_to_withdraw
     @transaction_date = Date.today
+    @balance_after_transaction = ""
   end 
 
   def execute(account_balance)
-    account_balance - amount_to_withdraw
+    @balance_after_transaction = account_balance - amount_to_withdraw
   end
 
 end 

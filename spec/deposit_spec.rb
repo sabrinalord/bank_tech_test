@@ -9,8 +9,6 @@ describe Deposit do
   it 'is instantiated with a transaction date' do
     allow(Date).to receive(:today).and_return Date.new(2023,01,14)
     expect(Deposit.new(10).transaction_date).to eq(Date.today)
-
-
   end 
 
   describe '#execute' do
