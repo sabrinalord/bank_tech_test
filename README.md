@@ -22,3 +22,31 @@ date || credit || debit || balance
 13/01/2023 || 2000.00 || || 3000.00
 10/01/2023 || 1000.00 || || 1000.00
 ```
+
+## My Approach
+
+For this project I aimed to follow the single responsibility princple so that each class and method are only responsible for one thing. 
+
+I decided to use the Command design pattern in my solution. Commands are encapsulated as objects, so that Deposit and Withdraw can be initialized and executed within an Account instance. 
+
+Whilst this means the code is substantially larger, the benefits ae that edits can be made to either Withdraw or Deposit without altering the Account class. If you needed to add a withdraw or deposit limit, or a pin number to the account, you could do so whilst only altering one file of code. 
+
+
+## How to run
+
+### Clone the repository 
+```
+git clone https://github.com/sabrinalord/bank_tech_test.git
+cd into bank_tech_test
+```
+
+### Install gems
+
+```
+bundle install
+```
+
+### Interaction
+
+Open up IRB in the project's terminal. 
+
