@@ -1,15 +1,15 @@
 require 'withdraw'
 
 describe Withdraw do
-  it 'has a value to withdraw' do
-    expect(Withdraw.new(10).amount_to_withdraw).to eq(10)
+  it 'has a debit value' do
+    expect(Withdraw.new(10).debit).to eq(10)
   end 
 
 
   it 'is instantiated with a transaction date' do
     
     allow(Time).to receive_message_chain(:now, :strftime).and_return "2023,01,14"
-    expect(Withdraw.new(10).transaction_date).to eq(Time.now.strftime("%d/%m/%Y"))
+    expect(Withdraw.new(10).date).to eq(Time.now.strftime("%d/%m/%Y"))
   end 
 
   describe '#execute' do

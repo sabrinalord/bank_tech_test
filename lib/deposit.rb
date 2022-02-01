@@ -1,5 +1,5 @@
 class Deposit
-  attr_reader :amount_to_deposit, :transaction_date
+  attr_reader :credit, :date, :debit, :new_balance
 
   def initialize(amount_to_deposit)
     # @amount_to_deposit = amount_to_deposit
