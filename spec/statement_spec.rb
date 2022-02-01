@@ -11,12 +11,24 @@ describe Statement do
 
     context 'given an account' do 
 
-      it 'returns the accounts transaction history' do 
-        account = object_double(Account.new, :transaction_history => "transaction info")
-        statement = Statement.new(account)
-        expect(statement.print_out).to eq("transaction info")
+      # it 'returns the accounts transaction history' do 
+      #   account = object_double(Account.new, 
+      #                 :transaction_history => [
+      #                   {
+      #                   amount_to_deposit: 20,
+      #                   transaction_date: "1/02/2022", 
+      #                   balance_after_transaction: 20
+      #                   }, 
+      #                   {
+      #                     amount_to_deposit: 10,
+      #                     transaction_date: "2/02/2022",
+      #                     balance_after_transaction: 30
+      #                     }
+      #                     ])
+      #   statement = Statement.new(account)
+        # expect(statement.print_out).to include({:transaction_date=>"1/02/022"})
    
-      end
+      # end
 
     end 
 

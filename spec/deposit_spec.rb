@@ -8,7 +8,6 @@ describe Deposit do
 
   it 'is instantiated with a transaction date' do
     allow(Time).to receive_message_chain(:now, :strftime).and_return "2023,01,14"
-
     expect(Deposit.new(10).transaction_date).to eq(Time.now.strftime("%d/%m/%Y"))
   end 
 
