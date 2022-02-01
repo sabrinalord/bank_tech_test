@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require './lib/account'
 require './lib/deposit'
 require './lib/statement'
 require './lib/withdraw'
-
 
 # Uncomment the below or paste into IRB
 account = Account.new
