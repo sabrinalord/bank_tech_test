@@ -8,12 +8,12 @@ class Deposit
     @credit = amount_to_deposit
     @debit = 0
     @date = Time.now.strftime("%d/%m/%Y")
-    @balance_after_transaction = 0
+    @new_balance = 0
 
   end 
 
   def execute(account_balance)
-    @balance_after_transaction = account_balance + @credit
+    @new_balance = account_balance + @credit
   end
 
 end 

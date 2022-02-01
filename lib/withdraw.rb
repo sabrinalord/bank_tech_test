@@ -8,11 +8,11 @@ class Withdraw
     @credit = 0
     @debit = amount_to_withdraw
     @date = Time.now.strftime("%d/%m/%Y")
-    @balance_after_transaction = 0
+    @new_balance = 0
   end 
 
   def execute(account_balance)
-    @balance_after_transaction = account_balance - @debit
+    @new_balance = account_balance - @debit
   end
 
 end 
