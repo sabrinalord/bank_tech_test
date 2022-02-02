@@ -9,7 +9,12 @@ class Account
   end
 
   def execute_command(command)
-    @transaction_history << command
-    @balance = command.execute(@balance)
+     if command.instance_of?(PrintStatement)
+        command.execute(@transaction_history)
+     else 
+        @transaction_history << command
+        @balance = command.execute(@balance)
+     end 
   end
+
 end

@@ -1,15 +1,10 @@
 # frozen_string_literal: true
 
-class Statement
-  attr_reader :account
+class PrintStatement
 
-  def initialize(account)
-    @account = account
-  end
-
-  def print_out
+  def execute(transaction_history)
     puts 'Date(D.M.Y)||Credit|| Debit || Balance'
-    @account.transaction_history.reverse_each do |transaction|
+      transaction_history.reverse_each do |transaction|
       puts "#{transaction.date} ||  #{transaction.credit}  ||   #{transaction.debit}   || #{transaction.new_balance}"
     end
   end
