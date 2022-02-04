@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Account
-  attr_reader :balance, :transaction_history, :execute_command
+  attr_reader :balance, :transaction_history
 
   def initialize
     @balance = 0
