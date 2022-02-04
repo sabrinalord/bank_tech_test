@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Account
+   attr_reader :transaction_history
 
   def initialize
     @transaction_history = []

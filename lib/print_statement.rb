@@ -2,8 +2,12 @@
 
 class PrintStatement
 
+  def initialize
+    @statement_headings = 'date || credit || debit || balance'
+  end 
+
   def execute(transaction_history)
-    puts 'date || credit || debit || balance'
+    puts @statement_headings
       transaction_history.reverse_each do |transaction|
         isDeposit = transaction.amount > 0 ? transaction.amount : ""
         isWithdrawal = transaction.amount < 0 ? transaction.amount : ""
