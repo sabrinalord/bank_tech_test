@@ -3,7 +3,6 @@
 class Account
 
   def initialize
-    @balance = 0
     @transaction_history = []
   end
 
@@ -12,7 +11,6 @@ class Account
         command.execute(@transaction_history)
      else 
         @transaction_history << command
-        @balance = command.execute(@balance)
      end 
   end
 

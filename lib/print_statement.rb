@@ -5,7 +5,10 @@ class PrintStatement
   def execute(transaction_history)
     puts 'date || credit || debit || balance'
       transaction_history.reverse_each do |transaction|
-      puts "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.new_balance}"
+        isDeposit = transaction.amount > 0 ? transaction.amount : ""
+        isWithdrawal = transaction.amount < 0 ? transaction.amount : ""
+        # balance = 0 
+      puts "#{transaction.date} || #{isDeposit} || #{isWithdrawal} || #{transaction.amount += transaction.amount}  "
     end
   end
 end
