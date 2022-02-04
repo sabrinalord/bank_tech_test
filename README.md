@@ -65,3 +65,11 @@ account.execute_command(Withdraw.new(10))
 account.execute_command(PrintStatement.new)
 ```
 
+
+### Tests
+
+To run the tests run:
+
+```
+rspec
+```

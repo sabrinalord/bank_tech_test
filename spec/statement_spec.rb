@@ -16,7 +16,7 @@ describe PrintStatement do
 
         expect do
           account.execute_command(PrintStatement.new)
-        end.to output("Date(D.M.Y)||Credit|| Debit || Balance\n01/02/2022 ||  10  ||   0   || 10\n").to_stdout
+        end.to output("date || credit || debit || balance\n01/02/2022 || 10 || 0 || 10\n").to_stdout
       end
     end
   end
