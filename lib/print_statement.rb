@@ -13,7 +13,7 @@ class PrintStatement
         isDeposit = transaction.amount > 0 ? transaction.amount : ""
         isWithdrawal = transaction.amount < 0 ? transaction.amount : ""
          balance = 0 
-      puts "#{transaction.date} || #{isDeposit} || #{isWithdrawal} || #{balance += transaction.amount}  "
+      puts "#{transaction.date.strftime('%d/%m/%Y')} || #{isDeposit} || #{isWithdrawal} || #{balance += transaction.amount}  "
     end
   end
 end
