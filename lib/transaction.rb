@@ -1,5 +1,5 @@
 class Transaction
-  attr_reader :amount, :date, :credit, :new_balance
+  attr_reader :amount, :date
 
   def initialize(amount)
     @amount = amount
